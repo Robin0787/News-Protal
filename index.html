@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Tailwind CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Daisy UI CDN -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/daisyui@2.51.2/dist/full.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/daisyui@2.51.2/dist/full.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2/dist/tailwind.min.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <!-- Font Awesome Kit -->
+    <script
+      src="https://kit.fontawesome.com/3121d157bd.js"
+      crossorigin="anonymous"
+    ></script>
+    <!-- Favicon link -->
+    <link rel="shortcut icon" href="./images/news.png" type="image/x-icon" />
+    <title>News Portal</title>
+  </head>
+  <body class="bg-gray-100" id="home">
+    <header>
+      <!-- Navbar Section -->
+      <nav class="w-10/12 mx-auto">
+        <section
+          class="flex justify-between items-center full py-6 gap-3 md:gap-0"
+        >
+          <article>
+            <button
+              class="px-3 py-1 bg-blue-500 text-white font-semibold text-lg border-0 rounded-md"
+            >
+              News
+            </button>
+            <a class="text-blue-500 text-lg font-semibold p-2">Portal</a>
+          </article>
+          <article
+            class="flex items-center text-blue-500 font-semibold text-md gap-4 md:gap-8"
+          >
+            <a class="cursor-pointer">News</a>
+            <a class="cursor-pointer">Blog</a>
+            <img
+              class="w-10 h-10 cursor-pointer"
+              src="./images/player-1.png"
+              alt=""
+            />
+          </article>
+        </section>
+      </nav>
+      <hr class="h-[2px] border-0 bg-gray-200 w-11/12 mx-auto" />
+      <!-- Categories Names -->
+      <section class="w-10/12 mx-auto">
+        <ul
+          id="categories-list"
+          class="flex flex-wrap justify-between items-center py-6 text-lg text-gray-600 gap-6"
+        >
+          <li
+            class="hover:bg-indigo-100 px-2 py-1 duration-300 rounded-md hover:text-purple-600 cursor-pointer active:bg-indigo-100"
+          >
+            <a href="#" onclick="loadNews('01', 'Home')">Home</a>
+          </li>
+        </ul>
+      </section>
+    </header>
+    <main class="w-10/12 mx-auto">
+      <!-- Main header -->
+      <section>
+        <article class="bg-white p-4 text-lg rounded-md font-semibold">
+          <span id="itemsFound"></span>
+        </article>
+        <!-- ------------- Sorting Section --------------->
+        <article
+          class="py-6 flex flex-wrap justify-center md:justify-between items-center gap-4"
+        >
+          <div>
+            <span class="text-lg">Sort By View : </span>
+            <select
+              class="text-md border border-gray-300 text-gray-700 rounded-lg p-2 cursor-pointer"
+              id=""
+            >
+              <option value="first" selected>default</option>
+              <option value="second">Second</option>
+              <option value="third">Third</option>
+            </select>
+          </div>
+          <div class="space-x-2">
+            <button
+              id="todays-pick"
+              class="bg-blue-500 text-white px-3 py-1 border-0 rounded-md text-lg duration-300 focus:ring-2"
+            >
+              Today's Pick
+            </button>
+            <button
+              id="trending"
+              class="hover:bg-blue-500 px-3 py-1 text-blue-500 hover:text-white duration-300 border border-blue-500 rounded-md text-lg focus:ring-2"
+            >
+              Trending
+            </button>
+          </div>
+        </article>
+      </section>
+      <!-- News Container -->
+      <section id="news-container" class="space-y-4 pb-12"></section>
+    </main>
+    <!-- Modal content -->
+    <input type="checkbox" id="newsDetails" class="modal-toggle" />
+    <div class="modal md:p-24" id="modalContainer"></div>
+    <script src="./script.js"></script>
+  </body>
+</html>
